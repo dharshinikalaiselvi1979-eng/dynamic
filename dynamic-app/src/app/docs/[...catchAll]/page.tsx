@@ -4,6 +4,20 @@
 // params.catchAll will be an array of strings from the URL path.
 
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
+// Pre-render static documentation paths at build time (SSG for catch-all)
+export async function generateStaticParams() {
+  return [
+    { catchAll: ["getting-started"] },
+    { catchAll: ["api"] },
+    { catchAll: ["api", "authentication"] },
+    { catchAll: ["api", "webhooks"] },
+    { catchAll: ["guides"] },
+    { catchAll: ["guides", "advanced-setup"] },
+    { catchAll: ["guides", "advanced", "setup", "config"] },
+  ];
+}
 
 export default async function DocsPage({
   params,

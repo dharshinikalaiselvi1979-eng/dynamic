@@ -4,6 +4,16 @@
 // It demonstrates mixing static (/products) with dynamic (/products/[id]) routes.
 
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
+// Pre-render static pages for known product IDs at build time
+export async function generateStaticParams() {
+  return [
+    { id: "shoe-001" },
+    { id: "shirt-001" },
+    { id: "hat-001" },
+  ];
+}
 
 export default async function ProductPage({
   params,
