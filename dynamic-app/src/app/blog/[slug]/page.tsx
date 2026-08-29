@@ -4,6 +4,16 @@
 // params.slug will contain the value from the URL (e.g., "my-first-post").
 
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
+// Statically generate routes at build time (SSG)
+export async function generateStaticParams() {
+  return [
+    { slug: "my-first-post" },
+    { slug: "hello-world" },
+    { slug: "nextjs-routing" },
+  ];
+}
 
 export default async function BlogPostPage({
   params,

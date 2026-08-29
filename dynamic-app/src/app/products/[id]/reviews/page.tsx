@@ -5,6 +5,15 @@
 
 import Link from "next/link";
 
+// Pre-render review pages for each product ID at build time
+export async function generateStaticParams() {
+  return [
+    { id: "shoe-001" },
+    { id: "shirt-001" },
+    { id: "hat-001" },
+  ];
+}
+
 export default async function ReviewsPage({
   params,
 }: {
