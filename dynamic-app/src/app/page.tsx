@@ -26,6 +26,14 @@ export default function HomePage() {
       tag: "[id]",
       examples: ["/products", "/products/shoe-001", "/products/shoe-001/reviews"],
     },
+    {
+      title: "Dashboard",
+      description: "Streaming with loading.tsx and component-level Suspense boundaries",
+      href: "/dashboard",
+      icon: "📊",
+      tag: "<Suspense>",
+      examples: ["/dashboard (Live Feed: 1s, Stats: 2s, Chart: 3s)"],
+    },
   ];
 
   return (
@@ -162,6 +170,9 @@ export default function HomePage() {
 ├── docs/
 │   └── [...catchAll]/
 │       └── page.tsx                  → /docs/*  (Catch-All)
+├── dashboard/
+│   ├── loading.tsx                   → /dashboard  (Route-level Loading)
+│   └── page.tsx                      → /dashboard  (Streaming Suspense)
 └── products/
     ├── page.tsx                      → /products  (Static Index)
     └── [id]/
