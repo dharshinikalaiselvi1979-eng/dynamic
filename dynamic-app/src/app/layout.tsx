@@ -49,6 +49,7 @@ export default function RootLayout({
                 { href: "/blog", label: "Blog" },
                 { href: "/docs/getting-started", label: "Docs" },
                 { href: "/products", label: "Products" },
+                { href: "/articles", label: "Articles" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="nav-link">
                   {link.label}
