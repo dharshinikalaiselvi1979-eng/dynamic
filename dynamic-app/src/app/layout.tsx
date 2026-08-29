@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
                 { href: "/blog", label: "Blog" },
                 { href: "/docs/getting-started", label: "Docs" },
                 { href: "/products", label: "Products" },
+                { href: "/api/test", label: "Env API" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="nav-link">
                   {link.label}
@@ -57,6 +59,11 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
+
+        {/* Client Environment Variables Demo Bar */}
+        <div style={{ padding: "0 24px" }}>
+          <Analytics />
+        </div>
 
         {/* Main content */}
         <main style={{ flex: 1 }}>{children}</main>
@@ -71,7 +78,7 @@ export default function RootLayout({
             color: "var(--text-muted)",
           }}
         >
-          Dynamic Segments & Catch-All Routes — Next.js App Router Demo
+          Dynamic Segments & Environment Variables — Next.js App Router Demo
         </footer>
       </body>
     </html>
