@@ -26,6 +26,14 @@ export default function HomePage() {
       tag: "[id]",
       examples: ["/products", "/products/shoe-001", "/products/shoe-001/reviews"],
     },
+    {
+      title: "Articles",
+      description: "Async Server Component fetching data on the server by default",
+      href: "/articles",
+      icon: "📰",
+      tag: "Server Component",
+      examples: ["/articles (Server Component)", "/articles/client-comparison"],
+    },
   ];
 
   return (
@@ -162,6 +170,10 @@ export default function HomePage() {
 ├── docs/
 │   └── [...catchAll]/
 │       └── page.tsx                  → /docs/*  (Catch-All)
+├── articles/
+│   ├── page.tsx                      → /articles  (Server Component)
+│   └── client-comparison/
+│       └── page.tsx                  → /articles/client-comparison  (Client Component)
 └── products/
     ├── page.tsx                      → /products  (Static Index)
     └── [id]/
